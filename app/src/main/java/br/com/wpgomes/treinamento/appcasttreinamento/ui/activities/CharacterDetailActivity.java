@@ -40,29 +40,14 @@ public class CharacterDetailActivity extends AppCompatActivity {
         //colocando título no topo da tela
         setTitle(character.getName());
 
-        ImageView characterImage = (ImageView) findViewById(R.id.character_image);
+        ImageView characterImage = (ImageView)findViewById(R.id.character_image_icon);
         TextView characterDescription = (TextView) findViewById(R.id.character_description);
 
-        Picasso.get().load(character.getThumbnailUrl()).into(characterImage);
+        Picasso.get().load(character.getThumbnailUrl()).resize(50, 50)
+                .centerCrop()
+                .into(characterImage);
         characterDescription.setText(character.getDescription());
 
-
-    }
-
-    //pegando o menu na toolbar (topo da tela)
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.character_detail, menu);
-
-        //criando a intent e validando tudo, sem precidar de actios send
-        ShareCompat.IntentBuilder intent = ShareCompat.IntentBuilder.from(this).
-                setText(character.getDescription()).setType("text/plain");
-        ShareActionProvider actionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider
-                (menu.findItem(R.id.action_share));
-        actionProvider.setShareIntent(intent.getIntent());
-
-        //ShareCompat.configureMenuItem(menu, R.id.action_share, intent);
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
