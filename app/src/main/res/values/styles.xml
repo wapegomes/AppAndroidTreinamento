@@ -1,16 +1,53 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="toolbarStyle">@style/AppTheme.Widget.Toolbar</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+
+    <style name="AppTheme.DarkSide" parent="AppTheme">
+
+        <item name="colorPrimary">#980908</item>
+
+        <item name="colorPrimaryDark">#340403</item>
+
+        <item name="colorAccent">#000000</item>
+
+    </style>
+
+
+    <style name="AppTheme.LightSide" parent="AppTheme">
+
+        <item name="colorPrimary">#4687AA</item>
+
+        <item name="colorPrimaryDark">#340403</item>
+
+        <item name="colorAccent">#8BC34A</item>
+
+    </style>
+
+    <!--style toolbar -->
+
+
+    <style name="AppTheme.Widget.Toolbar" parent="Widget.AppCompat.Toolbar">
+
+        <item name="android:minHeight">?attr/actionBarSize</item>
+
+        <item name="android:background">?attr/colorPrimary</item>
+
+        <item name="titleTextAppearance">@style/AppTheme.Widget.Toolbar.Title</item>
+
+    </style>
+
+    <style name="AppTheme.Widget.Toolbar.Title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+
+        <item name="android:textColor">@color/icons</item>
+
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

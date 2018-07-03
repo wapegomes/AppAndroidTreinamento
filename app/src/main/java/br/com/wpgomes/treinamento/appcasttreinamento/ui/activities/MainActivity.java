@@ -1,5 +1,6 @@
 package br.com.wpgomes.treinamento.appcasttreinamento.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,7 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.Serializable;
+
+import br.com.wpgomes.treinamento.appcasttreinamento.Mock;
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
+import br.com.wpgomes.treinamento.appcasttreinamento.model.Character;
 
 
 public class MainActivity extends AppCompatActivity
@@ -76,6 +81,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_personagens) {
+            Intent intent = new Intent(this,CharacterDetailActivity.class);
+            Character character = Mock.getCharacters().get(1);
+            intent.putExtra("character", character);
+            startActivity(intent);
+
             // Handle the camera action
         } else if (id == R.id.nav_evento) {
 

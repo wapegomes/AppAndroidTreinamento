@@ -6,4 +6,5 @@
     <string name="eventos">Eventos</string>
     <string name="navigation_drawer_open">Abrir</string>
     <string name="navigation_drawer_close">Fechar</string>
+    <string name="title_share">Compartilhar</string>
 </resources>
