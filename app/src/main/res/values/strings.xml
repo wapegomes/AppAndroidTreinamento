@@ -1,10 +1,20 @@
 <resources>
-    <string name="app_name">AppCastTreinamento</string>
+    <string name="app_name">Marvel App</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <string name="action_settings">Settings</string>
-    <string name="castgroup">Cast Group</string>
     <string name="personagens">Personagens</string>
+    <string name="frameworkSystem">Framework System - Android</string>
     <string name="eventos">Eventos</string>
-    <string name="navigation_drawer_open">Abrir</string>
-    <string name="navigation_drawer_close">Fechar</string>
+
     <string name="title_share">Compartilhar</string>
+    <string name="img01">img01</string>
+    <string name="img02">img02</string>
+    <string name="img03">img03</string>
+    <string name="img04">img04</string>
+    <string name="skip">Skip</string>
+
+
 </resources>

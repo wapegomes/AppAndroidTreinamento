@@ -10,7 +10,7 @@
     </style>
 
 
-    <style name="AppTheme.DarkSide" parent="AppTheme">
+    <style parent="AppTheme" name="AppTheme.DarkSide">
 
         <item name="colorPrimary">#980908</item>
 
@@ -21,7 +21,7 @@
     </style>
 
 
-    <style name="AppTheme.LightSide" parent="AppTheme">
+    <style parent="AppTheme" name="AppTheme.LightSide">
 
         <item name="colorPrimary">#4687AA</item>
 
@@ -34,6 +34,7 @@
     <!--style toolbar -->
 
 
+
     <style name="AppTheme.Widget.Toolbar" parent="Widget.AppCompat.Toolbar">
 
         <item name="android:minHeight">?attr/actionBarSize</item>
@@ -44,11 +45,12 @@
 
     </style>
 
-    <style name="AppTheme.Widget.Toolbar.Title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
 
-        <item name="android:textColor">@color/icons</item>
+    -<style name="AppTheme.Widget.Toolbar.Title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
 
-    </style>
+    <item name="android:textColor">@color/icons</item>
+
+</style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
