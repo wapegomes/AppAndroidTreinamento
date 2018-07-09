@@ -7,10 +7,6 @@ import android.webkit.WebView;
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Event;
 
-/**
- * Created by wgomes on 22/06/16.
- */
-
 public class EventDetailActivity extends BaseActivity {
 
     private Event event;
