@@ -16,10 +16,6 @@ import com.squareup.picasso.Picasso;
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Character;
 
-/**
- * Created by wgomes on 17/06/16.
- */
-
 public class CharacterDetailActivity extends BaseActivity {
 
     private Character character;
@@ -64,7 +60,6 @@ public class CharacterDetailActivity extends BaseActivity {
                 (menu.findItem(R.id.action_share));
         actionProvider.setShareIntent(intent.getIntent());
 
-        //ShareCompat.configureMenuItem(menu, R.id.action_share, intent);
         return super.onCreateOptionsMenu(menu);
     }
 
