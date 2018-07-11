@@ -31,11 +31,7 @@ public class EventFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         isTablet = getResources().getBoolean(R.bool.is_tablet);
-        if (!isTablet) {
-            return inflater.inflate(R.layout.fragment_recycler, container, false);
-        } else {
-            return inflater.inflate(R.layout.fragment_recycler_tablet, container, false);
-        }
+        return inflater.inflate(R.layout.fragment_recycler, container, false);
     }
 
     @Override
@@ -48,12 +44,13 @@ public class EventFragment extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         recyclerView.setLayoutManager(layoutManager);
 
-        if (isTablet){
+        if (isTablet) {
             webView = (WebView) view.findViewById(R.id.webview_event_detail_tablet);
         }
 
 
-        eventAdapter = new EventAdapter(getActivity(), Mock.getEvents(), recyclerView, isTablet,webView);
+        eventAdapter = new EventAdapter(getActivity(), Mock.getEvents(),
+                recyclerView, isTablet, webView);
         recyclerView.setAdapter(eventAdapter);
 
 
