@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -17,7 +16,7 @@ import com.squareup.picasso.Picasso;
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Character;
 
-public class CharacterDetailActivity extends AppCompatActivity {
+public class CharacterDetailActivity extends BaseActivity {
 
     private Character character;
 
@@ -40,14 +39,28 @@ public class CharacterDetailActivity extends AppCompatActivity {
         //colocando título no topo da tela
         setTitle(character.getName());
 
-        ImageView characterImage = (ImageView)findViewById(R.id.character_image_icon);
+        ImageView characterImage = (ImageView) findViewById(R.id.character_image);
         TextView characterDescription = (TextView) findViewById(R.id.character_description);
 
-        Picasso.get().load(character.getThumbnailUrl()).resize(50, 50)
-                .centerCrop()
-                .into(characterImage);
+        Picasso.get().load(character.getThumbnailUrl()).into(characterImage);
         characterDescription.setText(character.getDescription());
 
+
+    }
+
+    //pegando o menu na toolbar (topo da tela)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.character_detail, menu);
+
+        //criando a intent e validando tudo, sem precidar de actios send
+        ShareCompat.IntentBuilder intent = ShareCompat.IntentBuilder.from(this).
+                setText(character.getDescription()).setType("text/plain");
+        ShareActionProvider actionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider
+                (menu.findItem(R.id.action_share));
+        actionProvider.setShareIntent(intent.getIntent());
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -74,3 +87,4 @@ public class CharacterDetailActivity extends AppCompatActivity {
         }
     }
 }
+
