@@ -10,6 +10,11 @@
         <item
             android:id="@+id/nav_evento"
             android:title="@string/eventos" />
+
+        <item
+            android:id="@+id/nav_mapa"
+            android:title="@string/maps"
+            android:icon="@android:drawable/ic_menu_mapmode"/>
     </group>
 
 </menu>

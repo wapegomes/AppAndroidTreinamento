@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.fragments.CharacterFragment;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.fragments.EventFragment;
+import br.com.wpgomes.treinamento.appcasttreinamento.ui.fragments.MapsFragment;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -81,6 +82,8 @@ public class MainActivity extends BaseActivity
             fragment = CharacterFragment.newInstance();
         } else if (id == R.id.nav_evento) {
             fragment = EventFragment.newInstance();
+        } else if (id == R.id.nav_mapa) {
+            fragment = MapsFragment.newInstance();
         }
 
         if (fragment != null) {
