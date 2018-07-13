@@ -15,6 +15,7 @@ import com.squareup.picasso.Picasso;
 
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Character;
+import br.com.wpgomes.treinamento.appcasttreinamento.model.MarvelImage;
 
 public class CharacterDetailActivity extends BaseActivity {
 
@@ -42,7 +43,7 @@ public class CharacterDetailActivity extends BaseActivity {
         ImageView characterImage = (ImageView) findViewById(R.id.character_image);
         TextView characterDescription = (TextView) findViewById(R.id.character_description);
 
-        Picasso.get().load(character.getThumbnailUrl()).into(characterImage);
+        Picasso.get().load(character.thumbnail.getImageUrl(MarvelImage.Size.DETAIL)).into(characterImage);
         characterDescription.setText(character.getDescription());
 
 

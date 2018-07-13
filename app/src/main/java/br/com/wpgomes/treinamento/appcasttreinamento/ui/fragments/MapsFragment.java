@@ -2,6 +2,8 @@ package br.com.wpgomes.treinamento.appcasttreinamento.ui.fragments;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,10 +16,13 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.PlaceActivity;
@@ -26,7 +31,7 @@ import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.PlaceActivity
  * Created by wgomes on 11/07/16.
  */
 
-public class MapsFragment extends Fragment {
+public class MapsFragment extends Fragment implements LocationListener {
     private GoogleMap googleMap;
     private LatLng latLng;
 
@@ -60,7 +65,7 @@ public class MapsFragment extends Fragment {
 
     private void setup() {
 
-        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         if (ContextCompat.checkSelfPermission(getActivity(),
                 android.Manifest.permission.ACCESS_FINE_LOCATION) ==
@@ -82,10 +87,12 @@ public class MapsFragment extends Fragment {
                 .snippet("Rua Alvarenga Peixoto, 295 - Lourdes - Belo Horizonte/MG");
         googleMap.addMarker(markerOptions);
 
-        PolygonOptions line = new PolygonOptions();
+        PolylineOptions line = new PolylineOptions();
         line.add(latLng);
-        line.add(new LatLng(16,11));
-        googleMap.addPolygon(line);
+        line.add(new LatLng(10,-11));
+        line.add(new LatLng(10,11));
+        line.add(new LatLng(10,-78));
+        googleMap.addPolyline(line);
 
 
 
@@ -103,4 +110,24 @@ public class MapsFragment extends Fragment {
 
         }
     };
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String s, int i, Bundle bundle) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String s) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String s) {
+
+    }
 }

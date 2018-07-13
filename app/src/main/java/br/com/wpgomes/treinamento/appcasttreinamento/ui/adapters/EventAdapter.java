@@ -52,7 +52,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
         Event event = events.get(position);
         holder.eventTitle.setText(event.getTitle());
-        Picasso.get().load(event.getImgUrl()).centerCrop().resize(400, 400).into(holder.eventImg);
+//        Picasso.get().load(event.getImgUrl()).centerCrop().resize(400, 400).into(holder.eventImg);
 
     }
 
@@ -85,7 +85,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
                     intent.putExtra("event", event);
                     context.startActivity(intent);
                 }else{
-                    webView.loadUrl(event.getUrl());
+//                    webView.loadUrl(event.getUrl());
                 }
             }
         };

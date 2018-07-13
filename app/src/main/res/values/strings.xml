@@ -17,6 +17,8 @@
     <string name="skip">Skip</string>
     <string name="maps">Mapas</string>
     <string name="MAPS_API">AIzaSyD3P0Uf30OH-9_Wd1u5Xn7Hlv3WxnUQZMk</string>
+    <string name="msg_error_generic">Erro Generico ao recuperar os dados.</string>
+
 
 
 </resources>

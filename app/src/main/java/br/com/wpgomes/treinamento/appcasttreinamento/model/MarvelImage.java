@@ -15,7 +15,9 @@
 
 package br.com.wpgomes.treinamento.appcasttreinamento.model;
 
-public class MarvelImage {
+import java.io.Serializable;
+
+public class MarvelImage implements Serializable {
 
   private static final String SEPARATOR = "/";
   private static final String DOT = ".";
@@ -41,7 +43,8 @@ public class MarvelImage {
 
 
 
-  @Override public String toString() {
+  @Override
+  public String toString() {
     return "MarvelImage{" + "path='" + path + '\'' + ", extension='" + extension + '\'' + '}';
   }
 
@@ -91,7 +94,8 @@ public class MarvelImage {
       this.size = size;
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
       return size;
     }
   }

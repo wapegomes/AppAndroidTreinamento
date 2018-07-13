@@ -15,6 +15,7 @@ import java.util.List;
 
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Character;
+import br.com.wpgomes.treinamento.appcasttreinamento.model.MarvelImage;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.CharacterDetailActivity;
 
 
@@ -47,7 +48,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         Character character = characters.get(position);
-        Picasso.get().load(character.getThumbnailUrl()).centerCrop().resize(200,200).into(holder.characterImage);
+        Picasso.get().load(character.thumbnail.getImageUrl(MarvelImage.Size.DETAIL)).centerCrop().resize(200, 200).into(holder.characterImage);
         holder.characterDescription.setText(character.getDescription());
         holder.characterName.setText(character.getName());
     }
