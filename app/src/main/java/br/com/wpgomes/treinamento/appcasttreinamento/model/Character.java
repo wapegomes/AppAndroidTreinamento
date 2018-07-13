@@ -1,18 +1,24 @@
 package br.com.wpgomes.treinamento.appcasttreinamento.model;
 
+
+
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.List;
 
-public class Character implements Serializable{
+public class Character implements Serializable {
 
+    @SerializedName("id")
     public String id;
     public String name;
     public String description;
     public String modified;
     public String resourceUri;
     public List<MarvelUrl> urls;
+    public MarvelImage thumbnail;
+
     public String thumbnailUrl;
-//    public MarvelUrl thumbnail;
 //    public MarvelResources<ComicResourceDto> comics;
 //    public MarvelResources<StoryResourceDto> stories;
 //    public MarvelResources<EventResourceDto> events;
@@ -28,7 +34,7 @@ public class Character implements Serializable{
                 ", modified='" + modified + '\'' +
                 ", resourceUri='" + resourceUri + '\'' +
                 ", urls=" + urls +
-                ", thumbnail=" + thumbnailUrl +
+                ", thumbnail=" + thumbnail +
                 '}';
     }
 

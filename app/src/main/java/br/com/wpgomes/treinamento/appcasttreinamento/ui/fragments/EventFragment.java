@@ -49,10 +49,9 @@ public class EventFragment extends Fragment {
         }
 
 
-        eventAdapter = new EventAdapter(getActivity(), Mock.getEvents(),
-                recyclerView, isTablet, webView);
-        recyclerView.setAdapter(eventAdapter);
-
+//        eventAdapter = new EventAdapter(getActivity(), Mock.getEvents(),
+//                recyclerView, isTablet, webView);
+//        recyclerView.setAdapter(eventAdapter);
 
     }
 }

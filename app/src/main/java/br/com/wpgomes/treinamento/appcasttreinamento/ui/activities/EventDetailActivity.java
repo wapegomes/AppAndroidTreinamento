@@ -21,7 +21,7 @@ public class EventDetailActivity extends BaseActivity {
             event = (Event) getIntent().getSerializableExtra("event");
         }
         WebView webView = (WebView) findViewById(R.id.webview_event_detail);
-        webView.loadUrl(event.getUrl());
+//        webView.loadUrl(event.getUrl());
     }
 
 }

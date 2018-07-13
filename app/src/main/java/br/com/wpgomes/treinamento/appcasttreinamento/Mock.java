@@ -49,44 +49,44 @@ public class Mock {
     }
 
 
-    public static List<Event> getEvents() {
-
-        List<Event> eventsList = new ArrayList<>();
-
-        Event event = new Event();
-        event.setTitle("Spider-Island");
-        event.setDescription("This summer, heroes, villains and ordinary people across Manhattan gain " +
-                "spider abilities, but not all realize that with great power comes great responsibility! " +
-                "Can Spider-Man keep the peace? Dan Slott spearheads this arachna-tastic event in the pages " +
-                "of Amazing Spider-Man!");
-        event.setUrl("http://marvel.com/comics/events/305/spider-island?utm_campaign=apiRef&utm_source=277232a94db26746c653c879d30cec89");
-        event.setImgUrl("http://i.annihil.us/u/prod/marvel/i/mg/3/70/51e827657c1d0.jpg");
-
-        Event event2 = new Event();
-        event2.setTitle("Age of Apocalypse");
-        event2.setDescription("In a twisted version of the world they knew, the X-Men battle against the eternal mutant " +
-                "pocalypse as Bishop seeks to repair the timeline. Legion, Xavier's own son, attempts to " +
-                "kill off all of Xavier's enemies; however, when Legion attempts to murder Magneto, Xavier " +
-                "sacrifices his own life to save Magnus. As a result, Magneto casts off his anti-human sentiments " +
-                "and carries on Xavier's dream of peaceful co-existence, thereby founding the X-Men.");
-        event2.setUrl("http://marvel.com/comics/events/227/age_of_apocalypse?utm_campaign=apiRef&utm_source=277232a94db26746c653c879d30cec89");
-        event2.setImgUrl("http://i.annihil.us/u/prod/marvel/i/mg/5/e0/51ca0e08a6546.jpg");
-
-        Event event3 = new Event();
-        event3.setTitle("Secret Wars");
-        event3.setDescription("The most powerful heroes and villains in the Marvel Universe square off " +
-                "on Battleword with the victor promised their greatest dreams and desires! Writer Jim Shooter " +
-                "and artists Mike Zeck and Bob Layton introduce the Beyonder in a 12-issue event featuring " +
-                "the Avengers, the X-Men, the Fantastic Four, Spider-Man, Magneto, Doctor Doom and more!");
-        event3.setUrl("http://marvel.com/comics/events/270/secret_wars?utm_campaign=apiRef&utm_source=277232a94db26746c653c879d30cec89");
-        event3.setImgUrl("http://i.annihil.us/u/prod/marvel/i/mg/f/00/51cdeb7048dac.jpg");
-
-        eventsList.add(event);
-        eventsList.add(event2);
-        eventsList.add(event3);
-
-
-        return eventsList;
-
-    }
+//    public static List<Event> getEvents() {
+//
+//        List<Event> eventsList = new ArrayList<>();
+//
+//        Event event = new Event();
+//        event.setTitle("Spider-Island");
+//        event.setDescription("This summer, heroes, villains and ordinary people across Manhattan gain " +
+//                "spider abilities, but not all realize that with great power comes great responsibility! " +
+//                "Can Spider-Man keep the peace? Dan Slott spearheads this arachna-tastic event in the pages " +
+//                "of Amazing Spider-Man!");
+//        event.setUrl("http://marvel.com/comics/events/305/spider-island?utm_campaign=apiRef&utm_source=277232a94db26746c653c879d30cec89");
+//        event.setImgUrl("http://i.annihil.us/u/prod/marvel/i/mg/3/70/51e827657c1d0.jpg");
+//
+//        Event event2 = new Event();
+//        event2.setTitle("Age of Apocalypse");
+//        event2.setDescription("In a twisted version of the world they knew, the X-Men battle against the eternal mutant " +
+//                "pocalypse as Bishop seeks to repair the timeline. Legion, Xavier's own son, attempts to " +
+//                "kill off all of Xavier's enemies; however, when Legion attempts to murder Magneto, Xavier " +
+//                "sacrifices his own life to save Magnus. As a result, Magneto casts off his anti-human sentiments " +
+//                "and carries on Xavier's dream of peaceful co-existence, thereby founding the X-Men.");
+//        event2.setUrl("http://marvel.com/comics/events/227/age_of_apocalypse?utm_campaign=apiRef&utm_source=277232a94db26746c653c879d30cec89");
+//        event2.setImgUrl("http://i.annihil.us/u/prod/marvel/i/mg/5/e0/51ca0e08a6546.jpg");
+//
+//        Event event3 = new Event();
+//        event3.setTitle("Secret Wars");
+//        event3.setDescription("The most powerful heroes and villains in the Marvel Universe square off " +
+//                "on Battleword with the victor promised their greatest dreams and desires! Writer Jim Shooter " +
+//                "and artists Mike Zeck and Bob Layton introduce the Beyonder in a 12-issue event featuring " +
+//                "the Avengers, the X-Men, the Fantastic Four, Spider-Man, Magneto, Doctor Doom and more!");
+//        event3.setUrl("http://marvel.com/comics/events/270/secret_wars?utm_campaign=apiRef&utm_source=277232a94db26746c653c879d30cec89");
+//        event3.setImgUrl("http://i.annihil.us/u/prod/marvel/i/mg/f/00/51cdeb7048dac.jpg");
+//
+//        eventsList.add(event);
+//        eventsList.add(event2);
+//        eventsList.add(event3);
+//
+//
+//        return eventsList;
+//
+//    }
 }

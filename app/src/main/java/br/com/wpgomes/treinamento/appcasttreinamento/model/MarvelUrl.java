@@ -1,6 +1,9 @@
 package br.com.wpgomes.treinamento.appcasttreinamento.model;
 
-public class MarvelUrl {
+
+import java.io.Serializable;
+
+public class MarvelUrl implements Serializable {
 
     public String type;
     public String url;
