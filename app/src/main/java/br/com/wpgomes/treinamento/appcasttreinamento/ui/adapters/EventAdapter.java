@@ -2,6 +2,7 @@ package br.com.wpgomes.treinamento.appcasttreinamento.ui.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import java.util.List;
 
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Event;
+import br.com.wpgomes.treinamento.appcasttreinamento.model.MarvelImage;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.EventDetailActivity;
 
 /**
@@ -48,12 +50,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(EventAdapter.ViewHolder holder, int position) {
-
-        Event event = events.get(position);
-        holder.eventTitle.setText(event.getTitle());
-//        Picasso.get().load(event.getImgUrl()).centerCrop().resize(400, 400).into(holder.eventImg);
-
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        if (holder instanceof ViewHolder) {
+            Event event = events.get(position);
+            ViewHolder holderNew = (ViewHolder) holder;
+            holderNew.eventTitle.setText(event.title);
+            Picasso.get().load(event.thumbnail.getImageUrl(MarvelImage.Size.DETAIL))
+                    .centerCrop().resize(400, 400).into(holderNew.eventImg);
+        }
     }
 
     @Override
@@ -84,7 +88,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
                     Intent intent = new Intent(context, EventDetailActivity.class);
                     intent.putExtra("event", event);
                     context.startActivity(intent);
-                }else{
+                } else {
 //                    webView.loadUrl(event.getUrl());
                 }
             }
