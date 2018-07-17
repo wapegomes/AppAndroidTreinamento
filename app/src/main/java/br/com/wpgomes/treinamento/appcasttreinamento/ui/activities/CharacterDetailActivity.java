@@ -1,23 +1,16 @@
 package br.com.wpgomes.treinamento.appcasttreinamento.ui.activities;
 
 import android.content.ComponentName;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.content.res.Resources;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,15 +18,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Character;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.MarvelImage;
 import br.com.wpgomes.treinamento.appcasttreinamento.service.MP3Player;
 import br.com.wpgomes.treinamento.appcasttreinamento.service.MP3Service;
-import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.BaseActivity;
 
 
 /**
@@ -43,9 +32,6 @@ import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.BaseActivity;
 public class CharacterDetailActivity extends BaseActivity {
 
     private Character character;
-    private SQLiteDatabase db;
-    private List<Character> characterList = new ArrayList<>();
-
     private MP3Player mp3Player;
 
 
@@ -63,7 +49,7 @@ public class CharacterDetailActivity extends BaseActivity {
 
     private void connectService() {
         Intent intent = new Intent(this, MP3Service.class);
-        this.bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+        this.bindService(intent, serviceConnection, Context. BIND_AUTO_CREATE);
     }
 
     @Override

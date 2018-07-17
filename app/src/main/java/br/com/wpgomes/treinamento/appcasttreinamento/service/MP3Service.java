@@ -40,7 +40,7 @@ public class MP3Service extends Service implements MP3Player {
 
     @Override
     public void pause() {
-
+        mediaPlayer.pause();
     }
 
     public class MP3Binder extends Binder {
