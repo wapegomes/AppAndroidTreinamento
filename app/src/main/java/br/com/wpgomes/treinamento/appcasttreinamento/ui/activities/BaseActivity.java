@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import br.com.wpgomes.treinamento.appcasttreinamento.broadcast.NetworkBroadcast;
+import br.com.wpgomes.treinamento.appcasttreinamento.broadcast.TestReceiver;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
