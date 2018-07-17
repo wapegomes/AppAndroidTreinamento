@@ -1,13 +1,18 @@
 package br.com.wpgomes.treinamento.appcasttreinamento.ui.activities;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,15 +21,55 @@ import com.squareup.picasso.Picasso;
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Character;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.MarvelImage;
+import br.com.wpgomes.treinamento.appcasttreinamento.service.MP3Player;
+import br.com.wpgomes.treinamento.appcasttreinamento.service.MP3Service;
+
+
+/**
+ * Created by wgomes on 17/06/16.
+ */
 
 public class CharacterDetailActivity extends BaseActivity {
 
     private Character character;
+    private MP3Player mp3Player;
 
-    //no oncreate se definie o layout da activity
+
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mp3Player = ((MP3Service.MP3Binder) service).getService();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mp3Player = null;
+        }
+    };
+
+    private void connectService() {
+        Intent intent = new Intent(this, MP3Service.class);
+        this.bindService(intent, serviceConnection, Context. BIND_AUTO_CREATE);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        this.unbindService(serviceConnection);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        connectService();
+    }
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         //setando o layout
         setContentView(R.layout.activity_character_detail);
 
@@ -46,6 +91,22 @@ public class CharacterDetailActivity extends BaseActivity {
         Picasso.get().load(character.thumbnail.getImageUrl(MarvelImage.Size.DETAIL)).into(characterImage);
         characterDescription.setText(character.getDescription());
 
+        Button play = (Button) findViewById(R.id.play);
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mp3Player.play("http://52.23.170.89/wp-content/uploads/2017/09/james-bond.mp3");
+            }
+        });
+
+        Button stop = (Button) findViewById(R.id.stop);
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mp3Player.stop();
+            }
+        });
+
 
     }
 
@@ -61,18 +122,9 @@ public class CharacterDetailActivity extends BaseActivity {
                 (menu.findItem(R.id.action_share));
         actionProvider.setShareIntent(intent.getIntent());
 
+
+        //ShareCompat.configureMenuItem(menu, R.id.action_share, intent);
         return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //validando se o usuario clicou no botao share
-        if (item.getItemId() == R.id.action_share) {
-            share();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     //metodo para compartilhar contéudo
@@ -87,5 +139,7 @@ public class CharacterDetailActivity extends BaseActivity {
             startActivity(intent);
         }
     }
+
+
 }
 
