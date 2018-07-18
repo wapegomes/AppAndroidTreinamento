@@ -156,15 +156,14 @@ public class CharacterDetailActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         //validando se o usuario clicou no botao share
         if (item.getItemId() == R.id.action_favorite) {
-            item.setIcon(R.drawable.ic_action_liked);
-            registerRemoveFavorite();
+            registerRemoveFavorite(item);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void registerRemoveFavorite() {
+    private void registerRemoveFavorite(MenuItem item) {
 
 
         if (!db.isOpen()) {
@@ -172,14 +171,17 @@ public class CharacterDetailActivity extends BaseActivity {
         }
         if (!recuperaDado().isEmpty()) {
             db.delete(Constants.CHARACTER_TABLE, "name", new String[]{character.getName()});
+            item.setIcon(R.drawable.ic_action_not_like);
+
         } else {
             ContentValues dados = new ContentValues();
-
             dados.put("name", character.getName());
             dados.put("description", character.getDescription());
             dados.put("favorite", 1);
 
             db.insert(Constants.CHARACTER_TABLE, null, dados);
+            item.setIcon(R.drawable.ic_action_liked);
+
         }
 
         db.close();

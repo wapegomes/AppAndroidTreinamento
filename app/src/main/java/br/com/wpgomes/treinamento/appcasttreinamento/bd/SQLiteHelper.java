@@ -11,7 +11,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
 
     private static final String DATABASE_NAME = "marvelapp.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
 
 
     public SQLiteHelper(Context context) {

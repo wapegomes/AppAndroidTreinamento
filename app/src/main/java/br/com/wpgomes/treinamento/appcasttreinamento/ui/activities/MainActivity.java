@@ -1,5 +1,8 @@
 package br.com.wpgomes.treinamento.appcasttreinamento.ui.activities;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -22,6 +25,14 @@ public class MainActivity extends BaseActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences prefs = getSharedPreferences(sharedPreferencesFile,
+                MODE_PRIVATE);
+        boolean visited = prefs.getBoolean(getString(R.string.visited_splash), false);
+        if (!visited) {
+            Intent splash = new Intent(MainActivity.this, SplashScreenActivity.class);
+            startActivity(splash);
+            finish();
+        }
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -35,6 +46,7 @@ public class MainActivity extends BaseActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
