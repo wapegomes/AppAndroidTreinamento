@@ -170,7 +170,7 @@ public class CharacterDetailActivity extends BaseActivity {
             db = SQLiteHelper.getDatabase(this);
         }
         if (!recuperaDado().isEmpty()) {
-            db.delete(Constants.CHARACTER_TABLE, "name", new String[]{character.getName()});
+            db.delete(Constants.CHARACTER_TABLE, "name=?", new String[]{character.getName()});
             item.setIcon(R.drawable.ic_action_not_like);
 
         } else {
