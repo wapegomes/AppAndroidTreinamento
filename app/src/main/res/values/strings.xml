@@ -20,6 +20,7 @@
     <string name="msg_error_generic">Erro Generico ao recuperar os dados.</string>
     <string name="play">Play</string>
     <string name="stop">Stop</string>
-
+    <string name="favorite">Favorite</string>
+    <string name="visited_splash">visitouSplash</string>
 
 </resources>
