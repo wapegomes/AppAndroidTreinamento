@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
         android:name=".MarvelApp"
         android:allowBackup="true"
@@ -39,16 +42,15 @@
             android:name=".ui.activities.EventDetailActivity"
             android:screenOrientation="portrait"></activity>
 
-        <activity android:name=".ui.activities.SplashScreenActivity">
-
-
-        </activity>
+        <activity android:name=".ui.activities.SplashScreenActivity" />
 
         <activity android:name=".ui.activities.PlaceActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.activities.MainActivity" />
         </activity>
+
+        <activity android:name=".ui.activities.BluetoothActivity" />
 
         <receiver
             android:name=".broadcast.Boot"

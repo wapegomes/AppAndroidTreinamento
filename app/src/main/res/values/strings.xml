@@ -22,5 +22,10 @@
     <string name="stop">Stop</string>
     <string name="favorite">Favorite</string>
     <string name="visited_splash">visitouSplash</string>
+    <string name="scan">Scan</string>
+    <string name="button_disconnect">Disconnect</string>
+    <string name="button_connect">Connect</string>
+    <string name="selecionar_todos">Select All</string>
+    <string name="bluetooth">Bluetooth</string>
 
 </resources>
