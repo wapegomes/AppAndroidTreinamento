@@ -4,8 +4,8 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_personagens"
-            android:title="@string/personagens"
-            android:icon="@drawable/ic_marvel"/>
+            android:icon="@drawable/ic_marvel"
+            android:title="@string/personagens" />
 
         <item
             android:id="@+id/nav_evento"
@@ -13,13 +13,21 @@
 
         <item
             android:id="@+id/nav_mapa"
-            android:title="@string/maps"
-            android:icon="@android:drawable/ic_menu_mapmode"/>
+            android:icon="@android:drawable/ic_menu_mapmode"
+            android:title="@string/maps" />
 
         <item
             android:id="@+id/nav_blue"
-            android:title="@string/bluetooth"
-            android:icon="@drawable/ic_bluetooth"/>
+            android:icon="@drawable/ic_bluetooth"
+            android:title="@string/bluetooth" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/camera" />
 
     </group>
 
