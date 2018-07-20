@@ -73,6 +73,8 @@
         <service
             android:name=".service.MP3Service"
             android:enabled="true"
+
+
             android:exported="false"></service>
 
     </application>

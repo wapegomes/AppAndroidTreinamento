@@ -9,7 +9,6 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
-import android.widget.RemoteViews;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -31,7 +30,8 @@ public class MyFirebaseMessagingService extends
         // If the application is in the foreground handle both data and notification messages here.
         // Also if you intend on generating your own notifications as a result of a received FCM
         // message, here is where that should be initiated. See sendNotification method below.
-        Log.i(TAG, "From: " + remoteMessage.getFrom());
+
+        Log.d(TAG, "From: " + remoteMessage.getFrom());
         Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().
                 getBody());
 
@@ -74,5 +74,6 @@ public class MyFirebaseMessagingService extends
     public void onNewToken(String s) {
         super.onNewToken(s);
     }
+
 }
 
