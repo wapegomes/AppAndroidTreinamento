@@ -99,6 +99,9 @@ public class MainActivity extends BaseActivity
         } else if (id == R.id.nav_blue) {
             Intent intent = new Intent(this, BluetoothActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_camera) {
+            Intent intent = new Intent(this,CameraActivity.class);
+            startActivity(intent);
         }
 
             if (fragment != null) {

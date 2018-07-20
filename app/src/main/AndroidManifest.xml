@@ -11,6 +11,11 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:name=".MarvelApp"
@@ -51,6 +56,8 @@
         </activity>
 
         <activity android:name=".ui.activities.BluetoothActivity" />
+
+        <activity android:name=".ui.activities.CameraActivity" />
 
         <receiver
             android:name=".broadcast.Boot"

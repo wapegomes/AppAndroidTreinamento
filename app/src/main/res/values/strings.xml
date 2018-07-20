@@ -27,5 +27,6 @@
     <string name="button_connect">Connect</string>
     <string name="selecionar_todos">Select All</string>
     <string name="bluetooth">Bluetooth</string>
+    <string name="camera">Camera</string>
 
 </resources>
