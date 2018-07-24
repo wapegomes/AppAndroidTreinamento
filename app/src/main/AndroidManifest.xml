@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activities.CharacterDetailActivity" />
+        <activity android:name=".ui.activities.CharacterDetailKotlin" />
 
         <activity
             android:name=".ui.activities.EventDetailActivity"
