@@ -17,6 +17,7 @@ import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Character;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.MarvelImage;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.CharacterDetailActivity;
+import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.CharacterDetailKotlin;
 
 
 /**
@@ -81,7 +82,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.View
                 int position = recyclerView.getChildAdapterPosition(v);
                 Character character = characters.get(position);
 
-                Intent intent = new Intent(context, CharacterDetailActivity.class);
+                Intent intent = new Intent(context, CharacterDetailKotlin.class);
                 intent.putExtra("character", character);
                 context.startActivity(intent);
             }
