@@ -30,6 +30,10 @@ android {
             applicationIdSuffix = ".segpago"
             dimension "version"
         }
+        segmentoPremium {
+            applicationIdSuffix = ".segpremium"
+            dimension "version"
+        }
 
     }
 }

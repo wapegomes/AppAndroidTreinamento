@@ -101,6 +101,9 @@ public class CharacterDetailActivity extends BaseActivity {
         TextView characterDescription = (TextView) findViewById(R.id.character_description);
 
         Picasso.get().load(character.thumbnail.getImageUrl(MarvelImage.Size.DETAIL)).into(characterImage);
+        if (character!=null){
+
+        }
         characterDescription.setText(character.getDescription());
 
         Button play = (Button) findViewById(R.id.play);

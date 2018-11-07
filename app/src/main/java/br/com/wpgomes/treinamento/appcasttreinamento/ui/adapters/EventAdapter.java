@@ -89,7 +89,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
                     intent.putExtra("event", event);
                     context.startActivity(intent);
                 } else {
-//                    webView.loadUrl(event.getUrl());
+                    webView.loadUrl(event.getUrls().get(0).url);
                 }
             }
         };
