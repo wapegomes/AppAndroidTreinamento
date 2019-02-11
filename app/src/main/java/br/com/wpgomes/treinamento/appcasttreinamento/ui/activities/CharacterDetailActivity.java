@@ -33,11 +33,6 @@ import br.com.wpgomes.treinamento.appcasttreinamento.service.MP3Player;
 import br.com.wpgomes.treinamento.appcasttreinamento.service.MP3Service;
 import br.com.wpgomes.treinamento.appcasttreinamento.util.Constants;
 
-
-/**
- * Created by wgomes on 17/06/16.
- */
-
 public class CharacterDetailActivity extends BaseActivity {
 
     private Character character;

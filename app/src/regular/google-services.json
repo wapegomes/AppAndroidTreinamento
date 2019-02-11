@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "971008637216",
+    "firebase_url": "https://appcasttreinamen-1531425952607.firebaseio.com",
+    "project_id": "appcasttreinamen-1531425952607",
+    "storage_bucket": "appcasttreinamen-1531425952607.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971008637216:android:544434684193e108",
+        "android_client_info": {
+          "package_name": "br.com.wpgomes.treinamento.appcasttreinamento"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971008637216-emln9lli06ajckm20g30t1446uvcm7ns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGqO3RTVDh6nbDCuBUmcMw-fe8LGQAc2c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
