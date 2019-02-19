@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.adapters.CustomPagerAdapter;
 
@@ -26,6 +28,10 @@ public class SplashScreenActivity extends BaseActivity {
         setContentView(R.layout.activity_splash);
         loadGalleryImages();
 
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        final Bundle params = new Bundle();
+
+
         relativeLayout = (RelativeLayout) findViewById(R.id.skip);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +41,8 @@ public class SplashScreenActivity extends BaseActivity {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean(getString(R.string.visited_splash), true);
                 editor.commit();
+                params.putString("clicked","skip_clicked");
+                mFirebaseAnalytics.logEvent("splash_logged", params);
                 Intent main = new Intent(SplashScreenActivity.this, MainActivity.class);
                 startActivity(main);
                 finish();

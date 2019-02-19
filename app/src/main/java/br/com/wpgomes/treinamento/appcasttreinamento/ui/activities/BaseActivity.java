@@ -6,6 +6,8 @@ import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import br.com.wpgomes.treinamento.appcasttreinamento.broadcast.NetworkBroadcast;
 import br.com.wpgomes.treinamento.appcasttreinamento.broadcast.TestReceiver;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -17,6 +19,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class BaseActivity extends AppCompatActivity {
 
     public String sharedPreferencesFile = "MY_SHARED_PREFERENCES";
+
+    protected FirebaseAnalytics mFirebaseAnalytics;
 
 
     @Override

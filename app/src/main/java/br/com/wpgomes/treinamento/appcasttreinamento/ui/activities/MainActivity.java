@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.fragments.CharacterFragment;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.fragments.EventFragment;
@@ -33,6 +35,9 @@ public class MainActivity extends BaseActivity
             startActivity(splash);
             finish();
         }
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -89,30 +94,38 @@ public class MainActivity extends BaseActivity
         Fragment fragment = null;
 
         int id = item.getItemId();
+        Bundle params = new Bundle();
 
         if (id == R.id.nav_personagens) {
             fragment = CharacterFragment.newInstance();
+            params.putString(getResources().getString(R.string.menu_clicado), getResources().getString(R.string.personagens));
         } else if (id == R.id.nav_evento) {
             fragment = EventFragment.newInstance();
+            params.putString(getResources().getString(R.string.menu_clicado), getResources().getString(R.string.eventos));
         } else if (id == R.id.nav_mapa) {
             fragment = MapsFragment.newInstance();
+            params.putString(getResources().getString(R.string.menu_clicado), getResources().getString(R.string.maps));
         } else if (id == R.id.nav_blue) {
+            params.putString(getResources().getString(R.string.menu_clicado), getResources().getString(R.string.bluetooth));
             Intent intent = new Intent(this, BluetoothActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_camera) {
-            Intent intent = new Intent(this,CameraActivity.class);
+            params.putString(getResources().getString(R.string.menu_clicado), getResources().getString(R.string.camera));
+            Intent intent = new Intent(this, CameraActivity.class);
             startActivity(intent);
         }
 
-            if (fragment != null) {
-                beginTransaction
-                        .replace(R.id.content_main, fragment)
-                        .commit();
-            }
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
-
-            return true;
+        if (fragment != null) {
+            beginTransaction
+                    .replace(R.id.content_main, fragment)
+                    .commit();
         }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+
+        mFirebaseAnalytics.logEvent("main_navegation", params);
+
+        return true;
     }
+}
