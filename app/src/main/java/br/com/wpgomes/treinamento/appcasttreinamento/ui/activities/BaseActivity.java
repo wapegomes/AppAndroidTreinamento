@@ -3,13 +3,12 @@ package br.com.wpgomes.treinamento.appcasttreinamento.ui.activities;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import br.com.wpgomes.treinamento.appcasttreinamento.broadcast.NetworkBroadcast;
-import br.com.wpgomes.treinamento.appcasttreinamento.broadcast.TestReceiver;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**

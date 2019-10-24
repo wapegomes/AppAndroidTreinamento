@@ -2,7 +2,7 @@ package br.com.wpgomes.treinamento.appcasttreinamento.ui.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +16,6 @@ import java.util.List;
 import br.com.wpgomes.treinamento.appcasttreinamento.R;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.Character;
 import br.com.wpgomes.treinamento.appcasttreinamento.model.MarvelImage;
-import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.CharacterDetailActivity;
 import br.com.wpgomes.treinamento.appcasttreinamento.ui.activities.CharacterDetailKotlin;
 
 
